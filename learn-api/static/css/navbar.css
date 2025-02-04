@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar ul {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar ul li {
+    margin-top: 10px;
+  list-style: none;
+}
+
+.navbar ul li a {
+  background-color: #0b60b0;
+  text-decoration: none;
+  margin: 8px;
+  color: #fff;
+  padding: 2px;
+  border-radius: 4px;
+}

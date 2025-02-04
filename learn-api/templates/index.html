@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% load static tailwind_tags %}
+{%tailwind_css%}
+
+{% block weather %}
+    {% if page == 'weather' %}
+        <form method="POST" action="{% url 'get_weather' %}" class='grid justify-center items-center mt-4'>
+            {% csrf_token %}
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" placeholder="Type here" class="input input-bordered w-full max-w-xs" name="location" required />
+            <button type="submit" class="btn btn-sm btn-primary mt-4">Get Weather</button>
+        </form>
+
+        {% if weather_data %}
+        <h4>Weather in {{ city_names }} :</h4>
+        <h2>{{ weather }}</h2>
+        <p>Temperature: {{ tempe }} °C</p>
+        <p>Latitude: {{ lat }}</p>
+        <p>Longitude: {{ long }}</p>
+        {% endif %}
+    {% endif %}
+        
+{% endblock weather %}
+
+{% block cat %}
+    {% if page == 'cat' %}
+        <form method="GET" action="{% url 'get_cat' %}">
+            <button type="submit" name="get_image" value="1"  class="btn btn-sm btn-primary">Find Cat</button>
+        </form>
+        <div class="justify-center items-center grid">
+            {% if cat_image %}
+                <img src="{{ cat_image }}" alt="Cat Image" class="cat-image ">
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock cat %}
+
+{% block anime %}
+    {% if page == 'anime' %}
+    <form action="{% url "get_anime" %}" method='GET'>
+        <button type='submit' name='get_anime'value='1' class="btn btn-sm btn-primary">Find Anime</button>
+    </form>
+    <div class="anime-content">
+        {% for anime in anime_list %}
+        <div class="anime-item">
+            <h4>{{ anime.title }}</h4>
+            <img src="{{ anime.image_url }}" alt="{{ anime.title }}" class='anime-image'>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock anime %}
