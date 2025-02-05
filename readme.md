@@ -1,4 +1,4 @@
-<h2 style="text-align:center;">Simple Project Using REST API</h2>
+<h2 align="center">Simple Project Using REST API</h2>
 
 ---
 
@@ -18,4 +18,4 @@
 
 ****
 
-<h4 style="text-align:center;">🎉 Congratulations, you have run my website 🎉</h4>
+<h4 align="center">🎉 Congratulations, you have run my website 🎉</h4>
