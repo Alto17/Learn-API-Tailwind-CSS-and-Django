@@ -15,4 +15,7 @@
 #### 5.And you just have to run the server in your terminal with the prompt `python manage.py runserver`
 
 <br>
+
+****
+
 <h4 style="text-align:center;">🎉 Congratulations, you have run my website 🎉</h4>
